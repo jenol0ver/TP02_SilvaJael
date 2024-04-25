@@ -37,10 +37,10 @@ public class Main {
                         altaProducto(scanner, productos);
                         break;
                     case 2:
-                        mostrarProductos(scanner, productos);
+                        mostrarProductos(productos);
                         break;
                     case 3:
-                        //mostrarJugadoresOrdenadosApellido(jugadores);
+                        modificarProducto(scanner, productos);
                         break;                    
                     case 4:
                         System.out.println("Saliendo del menú...");
@@ -54,11 +54,10 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Ocurrió un error inesperado. Motivo: " + e.getMessage());
             }
-        } while (opcion != 8);
+        } while (opcion != 4);
 
         scanner.close();
 	}
-	
 	
 
 private static void altaProducto(Scanner scanner, List<Producto> productos) {
@@ -155,11 +154,58 @@ private static void altaProducto(Scanner scanner, List<Producto> productos) {
 	
 	}
 
-private static void mostrarProductos(Scanner scanner, List<Producto>productos) {
+private static void mostrarProductos(List<Producto>productos) {
 	for (Producto producto : productos) {
 		System.out.println(producto.toString());
 			}
 		}
+
+
+private static void modificarProducto(Scanner scanner, List<Producto> productos) {
+		// TODO Auto-generated method stub
+	int op = 0;
+
+        System.out.println("\n\tMODIFICAR PRODUCTO");
+        System.out.println("------------------------");
+        System.out.println("1. Descripcion");
+        System.out.println("2. Precio Unitario");
+        System.out.println("3. Origen de fabricacion");            
+        System.out.println("4. Categoria");
+        System.out.print("Ingrese el codigo del producto a modificar: ");
+        String codigo = scanner.nextLine();
+        System.out.print("Ingrese una opcion: ");
+
+        try {
+            op = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (op) {
+                case 1:
+                	System.out.print("Ingresar la descripcion del producto: ");
+                	
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;                    
+                case 4:
+                    
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente nuevamente.");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Debe ingresar un número entero.");
+            scanner.nextLine(); 
+        } catch (Exception e) {
+            System.out.println("Ocurrió un error inesperado. Motivo: " + e.getMessage());
+        }
+    
+		
+	}
+
 }
 
 
