@@ -33,7 +33,7 @@ public class Producto {
 		public double getPrecioU() {
 			return precioU;
 		}
-		public void setPrecioUnitario(double precioU) {
+		public void setPrecioU(double precioU) {
 			this.precioU = precioU;
 		}
 		public OrigenFabricacion getOrigenFab() {
